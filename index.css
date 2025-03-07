@@ -1,0 +1,76 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #0d0d0d;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    color: black;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 1s, box-shadow 1s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 10px cyan;
+}
+
+h1 {
+    color: cyan;
+    font-size: 32px;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+    margin-bottom: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    text-align: left;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+h2 {
+    white-space: nowrap;
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 0;
+}
+
+/* Menghapus kontrol audio agar tidak terlihat */
+audio {
+    display: none;
+}

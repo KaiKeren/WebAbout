@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Kai</title>
+    <style>
+    <audio autoplay="true" src="musik.mp3"></audio>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0d0d0d;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            color: black;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 1s, box-shadow 1s;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 10px cyan;
+        }
+
+        /* Animasi untuk tulisan Kai */
+        .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        .letter {
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+            opacity: 0;
+            position: relative;
+            animation-fill-mode: forwards;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-out;
+        }
+
+        .letter:nth-child(1) { /* K dari kiri */
+            left: -150px;
+            animation-name: slide-in-left;
+        }
+
+        .letter:nth-child(2) { /* a dari atas */
+            top: -150px;
+            animation-name: slide-in-top;
+        }
+
+        .letter:nth-child(3) { /* i dari kanan */
+            left: 150px;
+            animation-name: slide-in-right;
+        }
+
+        @keyframes slide-in-left {
+            to { left: 0; opacity: 1; }
+        }
+
+        @keyframes slide-in-top {
+            to { top: 0; opacity: 1; }
+        }
+
+        @keyframes slide-in-right {
+            to { left: 0; opacity: 1; }
+        }
+
+        /* Animasi perubahan warna teknologi */
+        @keyframes color-change {
+            0% { color: cyan; text-shadow: 0 0 10px cyan; }
+            25% { color: #32cd32; text-shadow: 0 0 15px #32cd32; }
+            50% { color: #6a5acd; text-shadow: 0 0 15px #6a5acd; }
+            75% { color: #00fa9a; text-shadow: 0 0 15px #00fa9a; }
+            100% { color: cyan; text-shadow: 0 0 10px cyan; }
+        }
+
+        .color-dynamic {
+            animation: color-change 3s infinite alternate ease-in-out;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+            text-align: left;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            max-width: 500px;
+            margin: 0;
+        }
+
+        /* Menghapus kontrol audio agar tidak terlihat */
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="button-container">
+        <a href="proyek1.html" class="btn" id="btn1">Jam Digital</a>
+        <a href="proyek2.html" class="btn" id="btn2">Kalkulator Sederhana</a>
+        <a href="proyek3.html" class="btn" id="btn3">Kalender</a>
+        <a href="proyek4.html" class="btn" id="btn4">Catatan</a>
+    </div>
+    
+    <div class="title-container">
+        <span class="letter">K</span>
+        <span class="letter">a</span>
+        <span class="letter">i</span>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <p>Halo, saya Kai, Seorang programmer yang gemar mengeksplorasi teknologi dan menciptakan hal baru. Di sini, saya berbagi proyek mulai dari coding hingga desain sampai hasil dari perjalanan belajar yang terus berlanjut. Semoga bisa menginspirasi kamu untuk terus berkarya.</p>
+        </div>
+    </div>
+
+    <script>
+        // Tambahkan efek perubahan warna setelah animasi selesai
+        setTimeout(() => {
+            document.querySelector('.title-container').classList.add('color-dynamic');
+        }, 1500);
+
+        const techColors = [
+            '#1e90ff', 
+            '#32cd32',
+            '#6a5acd', 
+            '#00fa9a', 
+            '#00ffff', 
+            '#00008b', 
+            '#4682b4', 
+            '#2f4f4f',
+            '#ff6347', 
+            '#8a2be2'  
+        ];
+
+        function getRandomTechColor() {
+            return techColors[Math.floor(Math.random() * techColors.length)];
+        }
+
+        function changeButtonColor(button) {
+            setInterval(() => {
+                const randomColor = getRandomTechColor();
+                button.style.backgroundColor = randomColor;
+                button.style.boxShadow = `0 0 10px ${randomColor}`;
+            }, 1000); 
+        }
+
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            changeButtonColor(button);
+        });
+    </script>
+
+</body>
+</html>
